@@ -1,0 +1,23 @@
+<ul>
+    <li>
+        <p>Name: {{cars.name}}</p>
+        <p>Category: {{cars.category}}</p>
+        <p>Marka: {{cars.marka}}</p>
+        <p>Price: {{cars.price}}</p>
+        {% for car_photo in car_photos%}
+        <img src="{{ car_photo.photo.url }}" >
+        {% endfor %}
+        <p>Year: {{cars.year}}</p>
+        {% if cars.is_used%}
+            <p>IS USED: YES</p>
+        {% else %}
+            <p>IS USED: NO</p>
+        {% endif %}
+        <p>Created_date: {{cars.created_date}}</p>
+    </li>
+
+</ul>
+
+<button><a href="{% url 'cars_update' cars.pk %}">Update</a></button>
+<button><a href="{% url 'cars_delete' cars.pk %}">Delete</a></button>
+<button><a href="{% url 'cars_list' %}">Cancel</a></button>

@@ -1,0 +1,5 @@
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes</button>
+</form>
+    <button><a href="{% url 'cars_detail' cars.pk %}">NO</a></button>

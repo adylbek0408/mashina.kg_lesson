@@ -1,0 +1,11 @@
+<ul>
+  <li>
+    {% for car in cars %}
+    <li>
+    <a href="{% url 'cars_detail' pk=car.pk %}">Name: {{ car.name }}</a>
+        <p>Date: {{ car.created_date }}</p>
+    </li>
+    {% endfor %}
+  </li>
+</ul>
+<button><a href="{% url 'cars_create' %}">Create</a> </button>
